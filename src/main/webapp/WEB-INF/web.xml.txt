@@ -1,0 +1,21 @@
+xml version=1.0 encoding=UTF-8
+web-app xmlns=httpxmlns.jcp.orgxmlnsjavaee
+         xmlnsxsi=httpwww.w3.org2001XMLSchema-instance
+         xsischemaLocation=httpxmlns.jcp.orgxmlnsjavaee httpxmlns.jcp.orgxmlnsjavaeeweb-app_4_0.xsd
+         version=4.0
+
+    servlet
+        servlet-nameMyServletservlet-name
+        servlet-classcom.example.MyServletservlet-class
+    servlet
+
+    servlet-mapping
+        servlet-nameMyServletservlet-name
+        url-patternmyservleturl-pattern
+    servlet-mapping
+
+    welcome-file-list
+        welcome-filescript.jswelcome-file
+    welcome-file-list
+
+web-app
