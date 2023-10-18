@@ -12,6 +12,23 @@
 </project>
     <artifactId>webapp</artifactId>
     <packaging>war</packaging>
-
+         <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <webResources>
+                        <!-- Include your HTML, CSS, JavaScript, and PHP files in the WAR file -->
+                        <resource>
+                            <directory>src/main/webapp</directory>
+                            <filtering>true</filtering>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <!-- Add dependencies for your web application, e.g., servlets, JSP, etc. -->
 </project>
