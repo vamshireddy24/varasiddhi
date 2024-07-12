@@ -4,7 +4,7 @@ pipeline {
         stage('checkout') {
             steps {
                 sh 'echo passed'
-                // git branch: 'main', url: "https://github.com/vamshireddy24/varasiddha.git"
+                // git branch: 'main', url: "https://github.com/vamshireddy24/varasiddhi.git"
             }
         }
         stage('Mvn-Build') {
@@ -30,7 +30,7 @@ pipeline {
         // }
         stage('Build and Push Docker Image') {
             environment {
-                DOCKER_IMAGE = "kubevamshi/varasiddha:${BUILD_NUMBER}"
+                DOCKER_IMAGE = "kubevamshi/varasiddhi:${BUILD_NUMBER}"
                 REGISTRY_CREDENTIALS = credentials('docker-cred')
             }
             steps {
