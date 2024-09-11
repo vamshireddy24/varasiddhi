@@ -16,18 +16,18 @@ pipeline {
                     }
             }
         }
-        // stage('Sonar-Test') {
-        //     environment {
-        //         SONAR_URL = "http://localhost:9000"
-        //     }
-        //     steps {
-        //         script {
-        //             withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-        //             sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
-        //             }
-        //         }
-        //     }
-        // }
+         stage('Sonar-Test') {
+             environment {
+                 SONAR_URL = "http://localhost:9000"
+             }
+             steps {
+                 script {
+                     withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
+                     sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+                     }
+                 }
+             }
+         }
         stage('Build and Push Docker Image') {
             environment {
                 DOCKER_IMAGE = "kubevamshi/varasiddhi:${BUILD_NUMBER}"
